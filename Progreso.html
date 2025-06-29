@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mis Tutorías - Tutorías UNERG</title>
+    <title>Progreso - Tutorías UNERG</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,44 +22,16 @@
             background-color: #042a50; /* Darker shade on hover */
             color: white;
         }
-        .btn-danger-custom {
-            background-color: #dc3545;
-            color: white;
-            transition: background-color 0.2s ease-in-out;
+        /* Progress bar custom colors */
+        .progress-bar-success {
+            background-color: #28a745; /* Green */
         }
-        .btn-danger-custom:hover {
-            background-color: #c82333; /* Darker shade on hover */
-            color: white;
+        .progress-bar-warning {
+            background-color: #ffc107; /* Yellow */
         }
-        .btn-warning-custom {
-            background-color: #ffc107;
-            color: #212529; /* Dark text for contrast */
-            transition: background-color 0.2s ease-in-out;
+        .progress-bar-danger {
+            background-color: #dc3545; /* Red */
         }
-        .btn-warning-custom:hover {
-            background-color: #e0a800; /* Darker shade on hover */
-            color: #212529;
-        }
-        .btn-secondary-custom {
-            background-color: #6c757d;
-            color: white;
-            transition: background-color 0.2s ease-in-out;
-        }
-        .btn-secondary-custom:hover {
-            background-color: #5a6268; /* Darker shade on hover */
-            color: white;
-        }
-        .estado {
-            font-weight: 600; /* Semibold */
-            padding: 0.25rem 0.625rem; /* ~4px 10px */
-            border-radius: 0.3125rem; /* ~5px */
-            display: inline-block; /* To apply padding correctly */
-            font-size: 0.875rem; /* Smaller font size for tags */
-        }
-        .pendiente { background-color: #fff3cd; color: #856404; }
-        .confirmada { background-color: #d1e7dd; color: #0f5132; }
-        .completada { background-color: #cfe2ff; color: #084298; }
-        .cancelada  { background-color: #f8d7da; color: #842029; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -92,55 +64,58 @@
 
     <!-- Header Section -->
     <div class="bg-[#063768] text-white py-10 px-4 text-center rounded-b-3xl shadow-lg mb-8 mx-auto w-11/12 md:w-5/6 lg:w-4/5 xl:w-3/4">
-        <h2 class="text-4xl md:text-5xl font-bold mb-3">Mis Tutorías</h2>
-        <p class="text-xl md:text-2xl font-light">Consulta el estado de tus sesiones pasadas y próximas</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-3">Progreso de Tutorías</h2>
+        <p class="text-xl md:text-2xl font-light">Visualiza tu avance en las distintas materias</p>
     </div>
 
-    <!-- Main Content - Tutorials Table -->
+    <!-- Main Content - Progress Table/Cards -->
     <div class="container mx-auto px-4 py-8 flex-grow">
         <div class="bg-white p-8 rounded-xl shadow-md">
+            <h3 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Mi Avance Académico</h3>
+
             <div class="overflow-x-auto rounded-lg border border-gray-200">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materia</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tutor</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hora</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
-                            <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acción</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tutorías Completadas</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Progreso</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Notas/Comentarios</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Álgebra</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Juan Pérez</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">2025-07-03</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">10:00 AM</td>
-                            <td class="px-6 py-4 whitespace-nowrap"><span class="estado pendiente">Pendiente</span></td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center">
-                                <button class="btn-danger-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Cancelar</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Álgebra Lineal</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">5 de 8</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-warning" style="width: 62.5%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">62.5% completado</span>
                             </td>
+                            <td class="px-6 py-4 text-lg text-gray-900 max-w-xs overflow-hidden text-ellipsis">Buen avance en matrices. Necesita reforzar determinantes.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Programación</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">María Torres</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">2025-06-20</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">02:00 PM</td>
-                            <td class="px-6 py-4 whitespace-nowrap"><span class="estado completada">Completada</span></td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center">
-                                <button class="btn-secondary-custom px-4 py-2 rounded-md text-base font-medium shadow-sm opacity-50 cursor-not-allowed" disabled>Ver</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Programación I</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">8 de 8</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-success" style="width: 100%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">100% completado</span>
                             </td>
+                            <td class="px-6 py-4 text-lg text-gray-900 max-w-xs overflow-hidden text-ellipsis">Dominio excelente de estructuras de control y funciones.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Redes</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Carlos Gómez</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">2025-06-28</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">11:30 AM</td>
-                            <td class="px-6 py-4 whitespace-nowrap"><span class="estado confirmada">Confirmada</span></td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center">
-                                <button class="btn-warning-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Reprogramar</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Cálculo Diferencial</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">2 de 10</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-danger" style="width: 20%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">20% completado</span>
                             </td>
+                            <td class="px-6 py-4 text-lg text-gray-900 max-w-xs overflow-hidden text-ellipsis">Requiere más sesiones para comprender límites y derivadas.</td>
                         </tr>
                         <!-- Add more rows as needed -->
                     </tbody>
@@ -150,7 +125,7 @@
     </div>
 
     <!-- Optional: Footer if you want one later -->
-    <footer class="bg-[#063768] text-white py-6 text-center mt-auto shadow-inner">
+ <footer class="bg-[#063768] text-white py-6 text-center mt-auto shadow-inner">
         <p class="text-sm md:text-base">&copy; 2025 Universidad Nacional Experimental Rómulo Gallegos - Sistema de Tutorías</p>
     </footer> 
 
