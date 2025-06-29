@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index - Tutorías UNERG</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa; /* Light grey background */
+        }
+        /* Custom styles for button primary color */
+        .btn-primary-custom {
+            background-color: #063768;
+            color: white;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .btn-primary-custom:hover {
+            background-color: #042a50; /* Darker shade on hover */
+            color: white;
+        }
+        .btn-light-custom {
+            background-color: #f8f9fa;
+            color: #063768;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .btn-light-custom:hover {
+            background-color: #e2e6ea;
+            color: #063768;
+        }
+        .beneficio-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .beneficio-card:hover {
+            transform: translateY(-5px) scale(1.02); /* Slight lift and scale on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-[#063768] p-4 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <!-- Logo Placeholder -->
+                <img src="Logo.jpg" alt="UNERG Logo" class="w-16 h-16 rounded-full mr-3 border-2 border-white">
+                <a class="text-white text-3xl font-extrabold" href="index.html">Tutorías UNERG</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" onclick="document.getElementById('navbarNav').classList.toggle('hidden')">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium" id="navbarNav">
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="dashboard.html">Dashboard</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="perfil.html">Mi Perfil</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="solicitar_tutoria.html">Solicitar Tutoría</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="mis_tutorias.html">Mis Tutorías</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="disponibilidad.html">Disponibilidad</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="solicitudes.html">Solicitudes</a>
+                <a class="text-white hover:text-blue-200 transition duration-300 ease-in-out px-3 py-1 rounded-md" href="login.html">Salir</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO Section -->
+    <section class="bg-[#063768] text-white py-20 px-4 text-center shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Sistema Web de Tutorías Académicas</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8">
+                Facilitando el apoyo entre estudiantes, tutores y profesores de la UNERG
+            </p>
+            <a href="login.html" class="btn-light-custom px-8 py-4 rounded-lg text-xl font-bold shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+                Iniciar sesión
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT THE PLATFORM Section -->
+    <section class="container mx-auto mt-16 px-4">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">¿Qué es Tutorías UNERG?</h2>
+        <p class="text-lg text-gray-700 text-center max-w-4xl mx-auto leading-relaxed">
+            Es una plataforma web diseñada para coordinar y gestionar tutorías académicas dentro de la Universidad Nacional Experimental Rómulo Gallegos.
+            Permite a estudiantes solicitar apoyo, a tutores ofrecer sus conocimientos, y a profesores dar seguimiento académico, fomentando el aprendizaje colaborativo.
+        </p>
+    </section>
+
+    <!-- BENEFITS Section -->
+    <section class="container mx-auto mt-16 px-4 mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center">Beneficios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Benefit Card 1 -->
+            <div class="col-span-1">
+                <div class="beneficio-card bg-white p-8 rounded-xl shadow-md text-center h-full">
+                    <h5 class="text-2xl font-semibold text-gray-800 mb-3">Acceso rápido</h5>
+                    <p class="text-gray-600">Los estudiantes pueden encontrar ayuda en minutos, sin depender de grupos informales.</p>
+                </div>
+            </div>
+            <!-- Benefit Card 2 -->
+            <div class="col-span-1">
+                <div class="beneficio-card bg-white p-8 rounded-xl shadow-md text-center h-full">
+                    <h5 class="text-2xl font-semibold text-gray-800 mb-3">Organización académica</h5>
+                    <p class="text-gray-600">Permite planificar sesiones, controlar horarios y llevar historial de tutorías.</p>
+                </div>
+            </div>
+            <!-- Benefit Card 3 -->
+            <div class="col-span-1">
+                <div class="beneficio-card bg-white p-8 rounded-xl shadow-md text-center h-full">
+                    <h5 class="text-2xl font-semibold text-gray-800 mb-3">Seguimiento real</h5>
+                    <p class="text-gray-600">Los tutores y profesores pueden dar seguimiento al progreso de los estudiantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION Section -->
+    <section class="text-center my-16 px-4">
+        <h4 class="text-3xl font-semibold text-gray-800 mb-4">¿Ya tienes cuenta?</h4>
+        <a href="login.html" class="btn-primary-custom px-8 py-4 rounded-lg text-xl font-bold shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+            Accede al sistema
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#063768] text-white py-6 text-center mt-auto shadow-inner">
+        <p class="text-sm md:text-base">&copy; 2025 Universidad Nacional Experimental Rómulo Gallegos - Sistema de Tutorías</p>
+    </footer>
+
+    <script>
+        // This script is for the mobile navigation toggle.
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggler = document.querySelector('button[onclick*="navbarNav"]');
+            const navMenu = document.getElementById('navbarNav');
+
+            if (navToggler && navMenu) {
+                navToggler.addEventListener('click', function() {
+                    navMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
