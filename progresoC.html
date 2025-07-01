@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Usuarios - Tutorías UNERG</title>
+    <title>Progreso de Clases - Tutorías UNERG</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,35 +22,25 @@
             background-color: #042a50; /* Darker shade on hover */
             color: white;
         }
-        .btn-edit-custom {
+        .btn-details-custom {
             background-color: #0d6efd; /* Bootstrap blue */
             color: white;
             transition: background-color 0.2s ease-in-out;
         }
-        .btn-edit-custom:hover {
+        .btn-details-custom:hover {
             background-color: #0b5ed7;
             color: white;
         }
-        .btn-danger-custom {
-            background-color: #dc3545;
-            color: white;
-            transition: background-color 0.2s ease-in-out;
+        /* Progress bar custom colors */
+        .progress-bar-high {
+            background-color: #28a745; /* Green */
         }
-        .btn-danger-custom:hover {
-            background-color: #c82333; /* Darker shade on hover */
-            color: white;
+        .progress-bar-medium {
+            background-color: #ffc107; /* Yellow */
         }
-        .role-badge {
-            font-weight: 600; /* Semibold */
-            padding: 0.25rem 0.625rem; /* ~4px 10px */
-            border-radius: 0.3125rem; /* ~5px */
-            display: inline-block;
-            font-size: 0.875rem;
+        .progress-bar-low {
+            background-color: #dc3545; /* Red */
         }
-        .role-estudiante { background-color: #e0f2fe; color: #0284c7; } /* light blue */
-        .role-tutor { background-color: #d1e7dd; color: #0f5132; } /* light green */
-        .role-profesor { background-color: #fff3cd; color: #856404; } /* light yellow */
-        .role-admin { background-color: #f8d7da; color: #842029; } /* light red */
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -83,75 +73,63 @@
 
     <!-- Header Section -->
     <div class="bg-[#063768] text-white py-10 px-4 text-center rounded-b-3xl shadow-lg mb-8 mx-auto w-11/12 md:w-5/6 lg:w-4/5 xl:w-3/4">
-        <h2 class="text-4xl md:text-5xl font-bold mb-3">Gestión de Usuarios</h2>
-        <p class="text-xl md:text-2xl font-light">Administra las cuentas y roles de los usuarios del sistema</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-3">Progreso de Clases</h2>
+        <p class="text-xl md:text-2xl font-light">Monitorea el avance general de tus estudiantes por materia</p>
     </div>
 
-    <!-- Main Content - User Management Table -->
+    <!-- Main Content - Class Progress Table -->
     <div class="container mx-auto px-4 py-8 flex-grow">
         <div class="bg-white p-8 rounded-xl shadow-md">
-            <h3 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Lista de Usuarios</h3>
-
-            <!-- Add User Button (Optional) -->
-            <div class="flex justify-end mb-6">
-                <button class="btn-primary-custom px-6 py-3 rounded-lg text-lg font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out">
-                    Agregar Nuevo Usuario
-                </button>
-            </div>
+            <h3 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Avance de Materias Asignadas</h3>
 
             <div class="overflow-x-auto rounded-lg border border-gray-200">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Correo</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rol</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materia</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Estudiantes</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Progreso General</th>
                             <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Ana García</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">ana.garcia@unerg.edu.ve</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Matemática Discreta</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">30</td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="role-badge role-estudiante">Estudiante</span>
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-high" style="width: 85%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">85% completado</span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center space-x-2">
-                                <button class="btn-edit-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Editar</button>
-                                <button class="btn-danger-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Eliminar</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                <button class="btn-details-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Ver Detalles</button>
                             </td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Roberto Flores</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">roberto.flores@unerg.edu.ve</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Bases de Datos I</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">25</td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="role-badge role-tutor">Tutor</span>
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-medium" style="width: 55%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">55% completado</span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center space-x-2">
-                                <button class="btn-edit-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Editar</button>
-                                <button class="btn-danger-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Eliminar</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                <button class="btn-details-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Ver Detalles</button>
                             </td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Dr. Elena Soto</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">elena.soto@unerg.edu.ve</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Programación Orientada a Objetos</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">28</td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="role-badge role-profesor">Profesor</span>
+                                <div class="w-full bg-gray-200 rounded-full h-4">
+                                    <div class="h-full rounded-full progress-bar-low" style="width: 30%;"></div>
+                                </div>
+                                <span class="text-sm text-gray-600 mt-1 block">30% completado</span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center space-x-2">
-                                <button class="btn-edit-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Editar</button>
-                                <button class="btn-danger-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">Admin General</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-900">admin@unerg.edu.ve</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="role-badge role-admin">Admin</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center space-x-2">
-                                <button class="btn-edit-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Editar</button>
-                                <button class="btn-danger-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Eliminar</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                <button class="btn-details-custom px-4 py-2 rounded-md text-base font-medium shadow-sm">Ver Detalles</button>
                             </td>
                         </tr>
                         <!-- Add more rows as needed -->
@@ -162,7 +140,7 @@
     </div>
 
     <!-- Optional: Footer if you want one later -->
-     <footer class="bg-[#063768] text-white py-6 text-center mt-auto shadow-inner">
+ <footer class="bg-[#063768] text-white py-6 text-center mt-auto shadow-inner">
         <p class="text-sm md:text-base">&copy; 2025 Universidad Nacional Experimental Rómulo Gallegos - Sistema de Tutorías</p>
     </footer> 
 
